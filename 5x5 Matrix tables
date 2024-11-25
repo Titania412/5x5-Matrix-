@@ -1,0 +1,82 @@
+public class Lab3_2 {
+	public static void main(String[] args) {
+		int[][] matrix = new int[5][5];
+		
+		for(int row = 0; row < matrix.length; row++) {
+			for(int column = 0; column < matrix[row].length; column++) {
+				
+				matrix[row][column] = ((int)(Math.random() * 100));
+ 			}
+		}
+
+		initalMatrix(matrix);
+		newMatrix(matrix);
+		sumNewmatrix(matrix);
+		
+	}
+	
+	public static void initalMatrix(int[][] matrix){
+		
+		System.out.println("Initial Matrix: ");
+		
+		for(int row = 0; row < matrix.length; row++) {
+			for(int column = 0; column < matrix[row].length; column++) {
+				int initialTable = matrix[row][column];
+				
+				System.out.printf("%5d|", initialTable);
+				
+ 			}
+			System.out.println();
+			
+		}		
+		
+	}
+	
+	public static void newMatrix(int[][] matrix) {
+		
+		System.out.println("\nNew Matrix: ");
+		
+		for(int row = 0; row < matrix.length; row++) {
+			for(int column = 0; column < matrix[row].length; column++) {
+				int newTable = matrix[row][column];
+				
+				if(matrix[row][column]%2 == 0) {
+					newTable = matrix[row][column] * 10;
+					
+				}
+				System.out.printf("%5d|", newTable);
+				
+ 			}
+			System.out.println();
+			
+		}
+		
+	}
+	
+	public static void sumNewmatrix(int[][] matrix) {
+		
+		for(int row = 0; row < matrix.length; row++) {
+			for(int column = 0; column < matrix[row].length; column++) {
+				if(matrix[row][column]%2 == 0) {
+					matrix[row][column] = matrix[row][column] * 10;
+					
+				}
+				
+ 			}
+			
+		}
+		
+		for(int rows = 0; rows < matrix.length; rows++) {
+			
+			int total = 0;
+			for(int columns = 0; columns < matrix[0].length; columns++) {
+				total += matrix[rows][columns];
+				
+			}
+			System.out.print("\nSum for row " + rows + " is " + total);
+			
+		}
+	
+	}
+}
+	
